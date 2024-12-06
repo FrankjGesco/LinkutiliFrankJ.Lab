@@ -23,9 +23,9 @@ body {
     top: 50%; /* Centra verticalmente */
     left: 50%; /* Centra orizzontalmente */
     transform: translate(-50%, -50%);
-    z-index: 0; /* Posizionato dietro gli altri elementi */
-    width: 80vw; /* Proporzionato alla larghezza della finestra */
-    height: 80vh; /* Proporzionato all'altezza della finestra */
+    z-index: 0; /* Dietro gli altri elementi */
+    width: 100vw; /* Adatta il logo alla larghezza */
+    height: 100vh; /* Adatta il logo all'altezza */
     background: url('./images/LOGO _LOGO BLU.svg') no-repeat center center;
     background-size: contain; /* Mantiene le proporzioni */
     opacity: 0.1; /* Trasparente */
@@ -103,18 +103,27 @@ body {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsività per dispositivi mobili */
+/* Responsività per desktop */
 @media (min-width: 1024px) {
     .background-svg {
-        width: 60vw; /* Adatta il logo a schermi grandi */
-        height: auto; /* Mantiene le proporzioni corrette */
-        opacity: 0.08; /* Leggermente più trasparente per desktop */
+        width: 100vw; /* Occupa tutta la larghezza */
+        height: 100vh; /* Occupa tutta l'altezza */
+        background-size: contain; /* Mantiene proporzioni corrette */
+        opacity: 0.08; /* Leggermente più trasparente su desktop */
+    }
+}
+
+/* Responsività per dispositivi mobili */
+@media (max-width: 1024px) {
+    .background-svg {
+        width: 100vw; /* Occupa tutto lo schermo in larghezza */
+        height: 100vh; /* Occupa tutto lo schermo in altezza */
+        background-size: contain; /* Mantiene proporzioni */
+        opacity: 0.1; /* Trasparenza leggera */
     }
 
-
-
     .icon-container {
-        gap: 10px;
+        gap: 10px; /* Riduce lo spazio tra le icone */
     }
 
     .icon-link {
@@ -133,15 +142,5 @@ body {
 
     .subtitle {
         font-size: 1rem;
-    }
-}
-
-/* Adattamento per orientamento orizzontale */
-@media (max-width: 600px) {
-    .background-svg {
-        width: 100vw; /* Occupa tutto lo schermo in larghezza */
-        height: 100vh; /* Occupa tutto lo schermo in altezza */
-        background-size: contain; /* Mantiene le proporzioni */
-        opacity: 0.1; /* Trasparenza leggera */
     }
 }
