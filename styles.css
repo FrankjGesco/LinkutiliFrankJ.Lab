@@ -111,7 +111,7 @@ body {
         width: 100vw; /* Occupa tutta la larghezza */
         height: 100vh; /* Occupa tutta l'altezza */
         background-size: contain; /* Mantiene proporzioni corrette */
-        opacity: 0.2; /* Leggermente più trasparente su desktop */
+        opacity: 0.06; /* Leggermente più trasparente su desktop */
     }
 }
 
@@ -121,7 +121,7 @@ body {
         width: 100vw; /* Occupa tutto lo schermo in larghezza */
         height: 100vh; /* Occupa tutto lo schermo in altezza */
         background-size: contain; /* Mantiene proporzioni */
-        opacity: 0.2; /* Trasparenza leggera */
+        opacity: 0.06; /* Trasparenza leggera */
     }
 
     .icon-container {
