@@ -13,26 +13,23 @@ body {
     align-items: center;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    overflow-y: auto; /* Scrolling verticale */
-    padding: 15px;
+    overflow: hidden; /* Evita lo scrolling */
     position: relative;
 }
 
 /* Posizionamento dell'SVG di sfondo */
 .background-svg {
     position: absolute;
-    top: 40%; /* Spostato verso il basso */
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0; /* Dietro gli altri elementi */
-    opacity: 0.05; /* Più trasparente */
-    filter: brightness(0.8); /* Regolazione della luminosità */
+    width: 100%; /* Adatta alla larghezza dello schermo */
+    height: 100%; /* Adatta all'altezza dello schermo */
+    background: url('./images/LOGO\ _LOGO\ 2\ BIANCO.svg') no-repeat center center;
+    background-size: contain; /* Mantiene le proporzioni */
+    opacity: 0.1; /* Più trasparente */
     pointer-events: none; /* Non interferisce con i clic */
-}
-
-.svg-decor {
-    width: 60vw; /* Più piccolo per evitare sovrapposizioni */
-    height: auto;
 }
 
 /* Contenitore principale per il logo e le icone */
@@ -60,7 +57,7 @@ body {
 /* Contenitore delle icone */
 .icon-container {
     display: flex;
-    flex-direction: column; /* Colonne per mobile */
+    flex-direction: column;
     gap: 15px;
     align-items: center;
     justify-content: center;
@@ -108,14 +105,10 @@ body {
 
 /* Responsività per dispositivi mobili */
 @media (max-width: 600px) {
-    body {
-        padding: 15px;
-    }
-
     .background-svg {
-        opacity: 0.1; /* Sfondo meno visibile per dispositivi mobili */
-        top: 60%; /* Spostato più in basso */
-        width: 80vw; /* Più piccolo per adattarsi */
+        width: 100%; /* Adatta completamente alla larghezza */
+        height: 100%; /* Adatta completamente all'altezza */
+        background-size: contain; /* Mantieni le proporzioni */
     }
 
     .icon-container {
@@ -138,5 +131,13 @@ body {
 
     .subtitle {
         font-size: 1rem;
+    }
+}
+
+/* Adattamento per orientamento orizzontale */
+@media (orientation: landscape) {
+    .background-svg {
+        width: 100%; /* Adatta completamente alla larghezza */
+        height: auto; /* Mantiene le proporzioni */
     }
 }
