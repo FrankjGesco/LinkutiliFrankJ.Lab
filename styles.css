@@ -23,14 +23,16 @@ body {
     top: 50%; /* Centra verticalmente */
     left: 50%; /* Centra orizzontalmente */
     transform: translate(-50%, -50%);
-    z-index: 0; /* Dietro gli altri elementi */
+    z-index: 0; /* Posizionato dietro gli altri elementi */
     width: 100vw; /* Adatta il logo alla larghezza */
     height: 100vh; /* Adatta il logo all'altezza */
     background: url('./images/LOGO _LOGO BLU.svg') no-repeat center center;
     background-size: contain; /* Mantiene le proporzioni */
-    opacity: 0.1; /* Trasparente */
+    opacity: 0.2; /* Leggermente più visibile */
+    backdrop-filter: blur(5px); /* Sfocatura per un effetto moderno */
     pointer-events: none; /* Evita interferenze */
 }
+
 
 /* Contenitore principale per il logo e le icone */
 .main-container {
