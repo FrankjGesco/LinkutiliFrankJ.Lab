@@ -13,8 +13,9 @@ body {
     align-items: center;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    overflow: hidden;
+    overflow-y: auto; /* Consenti scrolling verticale */
     position: relative;
+    padding: 10px; /* Margine per dispositivi mobili */
 }
 
 /* Posizionamento dell'SVG */
@@ -72,24 +73,29 @@ body {
     stroke: #000;
 }
 
-/* Responsività */
+/* Responsività per dispositivi mobili */
 @media (max-width: 600px) {
+    body {
+        padding: 15px; /* Più spazio sui lati */
+    }
+
     .icon-container {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px; /* Riduci lo spazio tra le icone */
     }
 
     .icon-link {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     .icon {
-        width: 40%;
-        height: 40%;
+        width: 35%;
+        height: 35%;
     }
 
     .svg-decor {
-        width: 100vw;
+        width: 90vw; /* Rendi più piccola l'immagine SVG */
+        opacity: 0.2; /* Riduci l'invadenza visiva */
     }
 }
