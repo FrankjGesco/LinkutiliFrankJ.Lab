@@ -20,16 +20,16 @@ body {
 /* Posizionamento dell'SVG di sfondo */
 .background-svg {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra orizzontalmente */
     transform: translate(-50%, -50%);
-    z-index: 0; /* Dietro gli altri elementi */
-    width: 100%; /* Adatta alla larghezza dello schermo */
-    height: 100%; /* Adatta all'altezza dello schermo */
-    background: url('./images/LOGO\ _LOGO\ 2\ BIANCO.svg') no-repeat center center;
+    z-index: 0; /* Posizionato dietro gli altri elementi */
+    width: 80vw; /* Proporzionato alla larghezza della finestra */
+    height: 80vh; /* Proporzionato all'altezza della finestra */
+    background: url('./images/LOGO _LOGO BLU.svg') no-repeat center center;
     background-size: contain; /* Mantiene le proporzioni */
-    opacity: 0.1; /* Più trasparente */
-    pointer-events: none; /* Non interferisce con i clic */
+    opacity: 0.1; /* Trasparente */
+    pointer-events: none; /* Evita interferenze */
 }
 
 /* Contenitore principale per il logo e le icone */
@@ -104,12 +104,14 @@ body {
 }
 
 /* Responsività per dispositivi mobili */
-@media (max-width: 600px) {
+@media (min-width: 1024px) {
     .background-svg {
-        width: 100%; /* Adatta completamente alla larghezza */
-        height: 100%; /* Adatta completamente all'altezza */
-        background-size: contain; /* Mantieni le proporzioni */
+        width: 60vw; /* Adatta il logo a schermi grandi */
+        height: auto; /* Mantiene le proporzioni corrette */
+        opacity: 0.08; /* Leggermente più trasparente per desktop */
     }
+
+
 
     .icon-container {
         gap: 10px;
@@ -135,9 +137,11 @@ body {
 }
 
 /* Adattamento per orientamento orizzontale */
-@media (orientation: landscape) {
+@media (max-width: 600px) {
     .background-svg {
-        width: 100%; /* Adatta completamente alla larghezza */
-        height: auto; /* Mantiene le proporzioni */
+        width: 100vw; /* Occupa tutto lo schermo in larghezza */
+        height: 100vh; /* Occupa tutto lo schermo in altezza */
+        background-size: contain; /* Mantiene le proporzioni */
+        opacity: 0.1; /* Trasparenza leggera */
     }
 }
