@@ -18,20 +18,20 @@ body {
     position: relative;
 }
 
-/* Posizionamento dell'SVG */
+/* Posizionamento dell'SVG di sfondo */
 .background-svg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
-    opacity: 0.4; /* Maggiore visibilità */
-    filter: brightness(1.5); /* Aumenta la luminosità */
-    pointer-events: none;
+    z-index: 0; /* Sotto gli altri elementi */
+    opacity: 0.1; /* Più visibile ma discreto */
+    filter: brightness(1); /* Regolazione della luminosità */
+    pointer-events: none; /* Non interferisce con i clic */
 }
 
 .svg-decor {
-    width: 90vw;
+    width: 80vw; /* Dimensioni adattive */
     height: auto;
 }
 
@@ -64,7 +64,7 @@ body {
     gap: 15px;
     align-items: center;
     justify-content: center;
-    z-index: 2;
+    z-index: 2; /* Porta sopra lo sfondo */
 }
 
 /* Stile dei link */
@@ -132,8 +132,8 @@ body {
     }
 
     .svg-decor {
-        width: 85vw; /* Rendi più piccola l'immagine SVG */
-        opacity: 0.3; /* Riduci l'invadenza visiva */
+        width: 70vw; /* Adatta meglio agli schermi piccoli */
+        opacity: 0.08; /* Sfondo ancora più leggero */
     }
 
     .logo-title {
