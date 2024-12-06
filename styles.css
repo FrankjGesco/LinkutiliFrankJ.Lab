@@ -9,13 +9,14 @@ body {
     background: #000; /* Sfondo nero */
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra orizzontalmente */
     font-family: 'Arial', sans-serif;
     color: #fff;
     overflow-y: auto; /* Consenti scrolling verticale */
+    padding: 15px;
     position: relative;
-    padding: 10px; /* Margine per dispositivi mobili */
 }
 
 /* Posizionamento dell'SVG */
@@ -25,19 +26,22 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    opacity: 0.3; /* Per rendere l'SVG trasparente */
-    pointer-events: none; /* Per evitare che l'SVG interferisca con i click */
+    opacity: 0.5; /* Più visibile */
+    filter: brightness(1.5); /* Migliora la visibilità */
+    pointer-events: none;
 }
 
 .svg-decor {
-    width: 80vw;
+    width: 90vw;
     height: auto;
 }
 
 /* Contenitore delle icone */
 .icon-container {
     display: flex;
-    gap: 30px;
+    flex-direction: column; /* Disposizione verticale */
+    gap: 10px; /* Riduci lo spazio tra le icone */
+    align-items: center;
     z-index: 2; /* Mettiamo le icone sopra l'SVG */
 }
 
@@ -46,8 +50,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 90px; /* Aumenta la dimensione */
+    height: 90px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -56,9 +60,9 @@ body {
 }
 
 .icon-link:hover {
-    transform: scale(1.2);
+    transform: scale(1.1); /* Un effetto hover meno invasivo */
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    box-shadow: 0 10px 20px rgba(255, 127, 95, 0.5);
+    box-shadow: 0 8px 16px rgba(255, 127, 95, 0.5);
 }
 
 /* Stile delle icone */
@@ -76,26 +80,21 @@ body {
 /* Responsività per dispositivi mobili */
 @media (max-width: 600px) {
     body {
-        padding: 15px; /* Più spazio sui lati */
-    }
-
-    .icon-container {
-        flex-direction: column;
-        gap: 15px; /* Riduci lo spazio tra le icone */
-    }
-
-    .icon-link {
-        width: 70px;
-        height: 70px;
-    }
-
-    .icon {
-        width: 35%;
-        height: 35%;
+        padding: 15px;
     }
 
     .svg-decor {
-        width: 90vw; /* Rendi più piccola l'immagine SVG */
-        opacity: 0.2; /* Riduci l'invadenza visiva */
+        width: 85vw; /* Rendi più piccola l'immagine SVG */
+        opacity: 0.4; /* Meno invasivo per piccoli schermi */
+    }
+
+    .icon-link {
+        width: 80px;
+        height: 80px;
+    }
+
+    .icon {
+        width: 40%;
+        height: 40%;
     }
 }
