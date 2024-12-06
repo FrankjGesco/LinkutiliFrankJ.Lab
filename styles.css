@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #11998e, #38ef7d); /* Verde acqua */    height: 100vh;
+background: linear-gradient(135deg, #11998e, #38ef7d); /* Verde acqua */    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
