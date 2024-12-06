@@ -6,15 +6,14 @@
 }
 
 body {
-    background: #000; /* Sfondo nero */
+    background: linear-gradient(135deg, #000428, #004e92); /* Sfondo gradiente elegante */
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra orizzontalmente */
+    justify-content: center;
+    align-items: center;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    overflow-y: auto; /* Consenti scrolling verticale */
+    overflow-y: auto; /* Scrolling verticale */
     padding: 15px;
     position: relative;
 }
@@ -26,8 +25,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    opacity: 0.5; /* Più visibile */
-    filter: brightness(1.5); /* Migliora la visibilità */
+    opacity: 0.4; /* Maggiore visibilità */
+    filter: brightness(1.5); /* Aumenta la luminosità */
     pointer-events: none;
 }
 
@@ -36,13 +35,36 @@ body {
     height: auto;
 }
 
+/* Contenitore principale per il logo e le icone */
+.main-container {
+    text-align: center;
+    z-index: 2; /* Porta gli elementi sopra lo sfondo */
+}
+
+/* Stile del logo e del testo */
+.logo-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-out; /* Animazione di apparizione */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-out;
+}
+
 /* Contenitore delle icone */
 .icon-container {
     display: flex;
-    flex-direction: column; /* Disposizione verticale */
-    gap: 10px; /* Riduci lo spazio tra le icone */
+    flex-direction: column; /* Colonne per mobile */
+    gap: 15px;
     align-items: center;
-    z-index: 2; /* Mettiamo le icone sopra l'SVG */
+    justify-content: center;
+    z-index: 2;
 }
 
 /* Stile dei link */
@@ -50,19 +72,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90px; /* Aumenta la dimensione */
+    width: 90px;
     height: 90px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     text-decoration: none;
-    z-index: 2;
+    animation: fadeIn 2s ease-out; /* Animazione di apparizione */
 }
 
 .icon-link:hover {
-    transform: scale(1.1); /* Un effetto hover meno invasivo */
+    transform: scale(1.1); /* Ingrandisci leggermente */
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    box-shadow: 0 8px 16px rgba(255, 127, 95, 0.5);
+    box-shadow: 0 10px 25px rgba(255, 127, 95, 0.5);
 }
 
 /* Stile delle icone */
@@ -77,15 +100,25 @@ body {
     stroke: #000;
 }
 
+/* Animazioni */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
 /* Responsività per dispositivi mobili */
 @media (max-width: 600px) {
     body {
         padding: 15px;
     }
 
-    .svg-decor {
-        width: 85vw; /* Rendi più piccola l'immagine SVG */
-        opacity: 0.4; /* Meno invasivo per piccoli schermi */
+    .icon-container {
+        gap: 10px; /* Riduci lo spazio tra le icone */
     }
 
     .icon-link {
@@ -96,5 +129,18 @@ body {
     .icon {
         width: 40%;
         height: 40%;
+    }
+
+    .svg-decor {
+        width: 85vw; /* Rendi più piccola l'immagine SVG */
+        opacity: 0.3; /* Riduci l'invadenza visiva */
+    }
+
+    .logo-title {
+        font-size: 2rem; /* Riduci leggermente per mobile */
+    }
+
+    .subtitle {
+        font-size: 1rem; /* Testo più piccolo */
     }
 }
