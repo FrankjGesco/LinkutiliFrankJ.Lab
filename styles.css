@@ -21,17 +21,17 @@ body {
 /* Posizionamento dell'SVG di sfondo */
 .background-svg {
     position: absolute;
-    top: 50%;
+    top: 40%; /* Spostato verso il basso */
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 0; /* Sotto gli altri elementi */
-    opacity: 0.1; /* Più visibile ma discreto */
-    filter: brightness(1); /* Regolazione della luminosità */
+    z-index: 0; /* Dietro gli altri elementi */
+    opacity: 0.05; /* Più trasparente */
+    filter: brightness(0.8); /* Regolazione della luminosità */
     pointer-events: none; /* Non interferisce con i clic */
 }
 
 .svg-decor {
-    width: 80vw; /* Dimensioni adattive */
+    width: 60vw; /* Più piccolo per evitare sovrapposizioni */
     height: auto;
 }
 
@@ -64,7 +64,7 @@ body {
     gap: 15px;
     align-items: center;
     justify-content: center;
-    z-index: 2; /* Porta sopra lo sfondo */
+    z-index: 2;
 }
 
 /* Stile dei link */
@@ -79,11 +79,11 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     text-decoration: none;
-    animation: fadeIn 2s ease-out; /* Animazione di apparizione */
+    animation: fadeIn 2s ease-out;
 }
 
 .icon-link:hover {
-    transform: scale(1.1); /* Ingrandisci leggermente */
+    transform: scale(1.1);
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     box-shadow: 0 10px 25px rgba(255, 127, 95, 0.5);
 }
@@ -106,19 +106,20 @@ body {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
 /* Responsività per dispositivi mobili */
 @media (max-width: 600px) {
     body {
         padding: 15px;
     }
 
+    .background-svg {
+        opacity: 0.1; /* Sfondo meno visibile per dispositivi mobili */
+        top: 60%; /* Spostato più in basso */
+        width: 80vw; /* Più piccolo per adattarsi */
+    }
+
     .icon-container {
-        gap: 10px; /* Riduci lo spazio tra le icone */
+        gap: 10px;
     }
 
     .icon-link {
@@ -131,16 +132,11 @@ body {
         height: 40%;
     }
 
-    .svg-decor {
-        width: 70vw; /* Adatta meglio agli schermi piccoli */
-        opacity: 0.08; /* Sfondo ancora più leggero */
-    }
-
     .logo-title {
-        font-size: 2rem; /* Riduci leggermente per mobile */
+        font-size: 2rem;
     }
 
     .subtitle {
-        font-size: 1rem; /* Testo più piccolo */
+        font-size: 1rem;
     }
 }
